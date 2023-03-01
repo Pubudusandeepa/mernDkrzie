@@ -27,11 +27,19 @@ services:
   database:
     image: mongo
     container_name: mongo-db
+    environment:
+      MONGO_INITDB_DATABASE: MERN
     ports:
       - "27017:27017"
     networks:
       - mern-networks
+    volumes:
+      - mongo-data:/data/db
 
 networks:
   mern-networks:
     driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local

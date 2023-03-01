@@ -8,17 +8,26 @@ const crud_index = (req, res) => {
 };
 
 // Create New CRUD
-const crud_create_post = (req, res) => {
+const crud_create_post = async (req, res) => {
   console.log("reeeeee", req.body);
   let crud = new Crud(req.body);
-  crud
-    .save()
-    .then((crud) => {
-      res.send(crud);
-    })
-    .catch(function (err) {
-      res.status(422).send("Crud add failed");
-    });
+  console.log(crud);
+  try {
+    const respose = await crud.save();
+    res.send(response);
+  } catch (error) {
+    console.log(error.message);
+    res.status(422).send("Crud add failed");
+  }
+  // crud
+  //   .save()
+  //   .then((crud) => {
+  //     res.send(crud);
+  //   })
+  //   .catch(function (err) {
+  //     console.log(err.message);
+  //     res.status(422).send("Crud add failed");
+  //   });
 };
 
 // Show a particular CRUD Detail by Id
