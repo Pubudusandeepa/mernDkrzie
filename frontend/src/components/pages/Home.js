@@ -6,7 +6,7 @@ function Home() {
 
 	return (
 		<div className="container">
-			<h1>MERN Stack CRUD</h1>
+			<h1>MERN Stack CRUDs for basic</h1>
 			<p>
 				<b>Front-end</b>: React.js v17+ with RRDv6+
 			</p>
