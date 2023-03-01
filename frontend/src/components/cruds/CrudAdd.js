@@ -39,7 +39,7 @@ function CrudAdd(props) {
 
   return (
     <div className="container" style={{ maxWidth: "400px" }}>
-      <h1>Create CRUD</h1>
+      <h1>Create CRUD as New</h1>
       <hr />
       <form onSubmit={handleSubmit}>
         <div className="form-group">
