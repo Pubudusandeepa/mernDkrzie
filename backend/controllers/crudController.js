@@ -12,22 +12,22 @@ const crud_create_post = async (req, res) => {
   console.log("reeeeee", req.body);
   let crud = new Crud(req.body);
   console.log(crud);
-  try {
-    const respose = await crud.save();
-    res.send(response);
-  } catch (error) {
-    console.log(error.message);
-    res.status(422).send("Crud add failed");
-  }
-  // crud
-  //   .save()
-  //   .then((crud) => {
-  //     res.send(crud);
-  //   })
-  //   .catch(function (err) {
-  //     console.log(err.message);
-  //     res.status(422).send("Crud add failed");
-  //   });
+  // try {
+  //   const respose =await crud.save();
+  //   res.send(response);
+  // } catch (error) {
+  //   console.log(error.message);
+  //   res.status(422).send("Crud add failed");
+  // }
+  await crud
+    .save()
+    .then((crud) => {
+      res.send(crud);
+    })
+    .catch(function (err) {
+      console.log(err.message);
+      res.status(422).send("Crud add failed");
+    });
 };
 
 // Show a particular CRUD Detail by Id

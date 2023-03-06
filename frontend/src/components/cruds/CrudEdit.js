@@ -20,7 +20,7 @@ function CrudEdit(props) {
     function () {
       async function updateCrud() {
         try {
-          const response = await get(`http://localhost:8080/api/cruds/${_id}`);
+          const response = await get(`http://localhost:4000/api/cruds/${_id}`);
           setCrud(response.data);
         } catch (error) {
           console.log(error);

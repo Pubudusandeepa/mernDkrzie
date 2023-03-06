@@ -20,7 +20,7 @@ function CrudAdd(props) {
     //if (!crud.companyName || !crud.email) return;
     async function postCrud() {
       try {
-        const response = await post("http://localhost:8080/api/cruds/", crud);
+        const response = await post("http://localhost:4000/api/cruds/", crud);
         navigate(`/cruds/${response.data._id}`);
       } catch (error) {
         console.log("error", error);

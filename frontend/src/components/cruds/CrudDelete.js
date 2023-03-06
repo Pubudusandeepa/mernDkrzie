@@ -13,7 +13,7 @@ function CrudDelete(props) {
       async function deleteCrudById() {
         try {
           const response = await axios.get(
-            `http://localhost:8080/api/cruds/${_id}`
+            `http://localhost:4000/api/cruds/${_id}`
           );
           setCrud(response.data);
         } catch (error) {
